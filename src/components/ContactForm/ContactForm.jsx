@@ -6,7 +6,7 @@ import css from "../Phonebook/phonestyle.module.css";
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -21,11 +21,9 @@ import css from "../Phonebook/phonestyle.module.css";
     setName(value);
   } else if (name === "number") {
     setNumber(value);
-  }
+    }
 };
 
-
-  
 
     return (
       <form className={css.pform} onSubmit={handleSubmit}>
@@ -62,7 +60,8 @@ import css from "../Phonebook/phonestyle.module.css";
         </button>
       </form>
     );
- }
+    }
+ 
   
 
 export default ContactForm;

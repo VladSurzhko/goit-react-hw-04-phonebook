@@ -10,6 +10,20 @@ const Phonebook = () =>{
  const [contacts, setContacts] = useState([]);
  const [filter, setFilter] = useState ("")
 
+ useEffect(() => {
+  window.localStorage.getItem("contacts")
+ }, [])
+
+ useEffect(() => {
+  window.localStorage.setItem('contacts', JSON.stringify(contacts));
+});
+
+useEffect(() => {
+  localStorage.clear();
+}, []);
+
+
+
 
   const handleAddContact = (name, number) => {
 
@@ -48,9 +62,6 @@ const Phonebook = () =>{
     );
 
 
-    useEffect(() => {
-    window.localStorage.setItem('contacts', JSON.stringify(contacts));
-  });
   
   
     return (
@@ -85,6 +96,9 @@ const Phonebook = () =>{
 // export default Phonebook;
 
 export const App = () => {
+
+  
+
   return (
     <div
       style={{
